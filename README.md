@@ -4,17 +4,15 @@ A menu bar system monitor for macOS. CPU, memory, disk, network, battery and sen
 
 ![Pulso overview: the menu bar item, the open panel and desktop widgets](design/screenshots/en/overview.png)
 
-> **Status: early development.** The screenshot above is the design target, not the current build. The app skeleton (status item and glass panel) runs today; the monitors are being built milestone by milestone. See [Roadmap](#roadmap).
+> **Status: first working version (0.1.0, unreleased).** Every module, the settings window, alerts and the desktop widgets run. The screenshot above is the design target; the app matches it closely. See [Roadmap](#roadmap) and [Known limitations](#known-limitations).
 
 "Pulso" is a working title.
 
 ## Features
 
-Planned for 1.0:
-
 - **Menu bar widgets**: one per enabled module, in seven styles (mini, line, bars, ring, speed, battery, dot), monochrome by default.
 - **Overview panel**: CPU, memory, disk, network, battery and sensor readings at a glance, with a status pill that names any active alert.
-- **Module panels**: 60 second charts, per-core usage, memory pressure, per-volume space, network rates, battery health and top processes.
+- **Module panels**: 60 second charts, per-core usage, memory pressure, per-volume space with eject, SMART state and wear, network rates with per-process traffic, battery health and Bluetooth device batteries, every temperature sensor and fan.
 - **Desktop widgets**: small (CPU, memory) and medium (network).
 - **Alerts**: notifications when a reading stays above a threshold.
 - **Localized**: English and Portuguese (Brazil), with locale-aware numbers, units and dates.
@@ -41,6 +39,8 @@ xcodegen generate
 open Pulso.xcodeproj
 ```
 
+Signing uses the E-Dew team (`6HC4RKRHXD`) because the widget extension shares data with the app through an app group. To build with your own team, change `DEVELOPMENT_TEAM` in `project.yml` and the app group prefix in `Pulso/Shared/WidgetSnapshot.swift` and both `.entitlements` files. To build without signing at all (no widgets), add `CODE_SIGNING_ALLOWED=NO` to the `xcodebuild` command.
+
 Or build from the command line:
 
 ```sh
@@ -48,7 +48,13 @@ xcodebuild -project Pulso.xcodeproj -scheme Pulso -configuration Debug -derivedD
 open build/Build/Products/Debug/Pulso.app
 ```
 
-Pulso runs as a menu bar app with no Dock icon. Click the status item to open the panel. Right-click it to quit.
+Run the tests with:
+
+```sh
+xcodebuild -project Pulso.xcodeproj -scheme Pulso -derivedDataPath build test
+```
+
+Pulso runs as a menu bar app with no Dock icon. Click the status item to open the panel. Right-click it for Settings and Quit. Widgets and launch at login work best from `/Applications`.
 
 To run in Portuguese without changing the system language, pass `-AppleLanguages "(pt-BR)"` as a launch argument (Scheme > Run > Arguments in Xcode).
 
@@ -56,7 +62,13 @@ To run in Portuguese without changing the system language, pass `-AppleLanguages
 
 | Path | Contents |
 | --- | --- |
-| `Pulso/` | App source: `App` (entry point, status item), `Panel` (panel window and views), `Settings`, `Design` (theme values) |
+| `Pulso/App` | Entry point, status item and settings window |
+| `Pulso/Sampling` | One sampler per module, the `Monitor` that schedules them, and the alert engine |
+| `Pulso/Hardware` | C helpers for readings with no Swift-friendly API: HID thermal sensors, SMC fans, NVMe SMART, GPU and disk I/O |
+| `Pulso/Panel`, `Pulso/MenuBar`, `Pulso/Settings` | SwiftUI views for the panel, the menu bar widgets and the settings panes |
+| `Pulso/Design`, `Pulso/Shared` | Theme values, shared components and charts; formatting, localization and preferences (shared with the widgets) |
+| `PulsoWidgets/` | WidgetKit extension: CPU, memory and network desktop widgets |
+| `PulsoTests/` | Unit tests |
 | `localization/Localizable.xcstrings` | String Catalog for every user-facing string, English and Portuguese (Brazil) |
 | `design/` | HTML mockups, screenshots and design tokens. The source of truth for layout, spacing and color |
 | `project.yml` | XcodeGen spec for the Xcode project |
@@ -68,14 +80,24 @@ To run in Portuguese without changing the system language, pass `-AppleLanguages
 Milestones from [`HANDOFF.md`](HANDOFF.md#7-suggested-build-order):
 
 - [x] 1. Project skeleton: agent app, status item, glass panel
-- [ ] 2. CPU and memory samplers, overview tiles, menu bar widgets
-- [ ] 3. CPU and memory panels with charts and process lists
-- [ ] 4. Disk, network and battery
-- [ ] 5. Settings window
-- [ ] 6. Localization pass and formatters
-- [ ] 7. Alerts and notifications
-- [ ] 8. Sensors
-- [ ] 9. Widget extension
+- [x] 2. CPU and memory samplers, overview tiles, menu bar widgets
+- [x] 3. CPU and memory panels with charts and process lists
+- [x] 4. Disk, network and battery
+- [x] 5. Settings window
+- [x] 6. Localization pass and formatters
+- [x] 7. Alerts and notifications
+- [x] 8. Sensors
+- [x] 9. Widget extension
+
+## Known limitations
+
+- Process lists only include processes owned by the current user. System daemons need a privileged helper to read, which Pulso does not ship.
+- Per-process network traffic comes from `nettop`, since macOS has no public API for it. It runs only while the network panel is open.
+- The Wi-Fi network name is not shown: reading it requires Location Services permission.
+- Temperatures and fans use private interfaces (HID event system, SMC) that Apple may change in any macOS release.
+- macOS decides when desktop widgets refresh, usually about once a minute.
+- Low Power Mode is shown read-only; the switch opens Battery settings, since changing it needs administrator rights.
+- The latency check opens a TCP connection to a configurable host (1.1.1.1 by default), and the opt-in public IP lookup calls api.ipify.org. Both run only while the network panel is open.
 
 ## Contributing
 

@@ -120,8 +120,10 @@ Settled on 2026-11-15:
 - **Appearance:** dark glass only.
 - **Name and bundle identifier:** Pulso, `com.edew.pulso`.
 - **License:** MIT, open source.
-
-Still open: 2, 3, 4 and 7.
+- **Low Power Mode:** shown read-only; the switch opens Battery settings.
+- **Public IP:** opt-in, off by default, looked up at api.ipify.org while the network panel is open.
+- **Per-process network and disk:** both in v1. Disk from `proc_pid_rusage`, network from `nettop`, each only while its panel is open.
+- **Widget refresh:** the app asks WidgetKit for a reload about once a minute; each widget shows the time its data was taken.
 
 1. **Distribution.** Temperature and fan readings rely on private interfaces that do not work inside the App Sandbox. Either distribute outside the Mac App Store (Developer ID, notarized) with full sensors, or ship a sandboxed App Store build without them.
 2. **Low Power Mode switch.** Reading the state is public API. Changing it is not: it needs `pmset` with administrator rights or a Shortcuts action. Options are a privileged helper, opening Battery settings instead, or showing the state read-only.

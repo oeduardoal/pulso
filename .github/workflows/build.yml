@@ -18,3 +18,7 @@ jobs:
         run: |
           xcodebuild -project Pulso.xcodeproj -scheme Pulso -configuration Debug \
             -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+      - name: Test
+        run: |
+          xcodebuild -project Pulso.xcodeproj -scheme Pulso \
+            -derivedDataPath build CODE_SIGNING_ALLOWED=NO test

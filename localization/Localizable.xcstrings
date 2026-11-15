@@ -192,6 +192,42 @@
         }
       }
     },
+    "alert.battery.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery is at %@. Connect to power soon."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bateria está em %@. Conecte à energia em breve."
+          }
+        }
+      },
+      "comment": "Notification body; formatted percent"
+    },
+    "alert.battery.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low battery"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bateria fraca"
+          }
+        }
+      },
+      "comment": "Notification title"
+    },
     "alert.cpu.body": {
       "comment": "Notification body",
       "extractionState": "manual",
@@ -227,6 +263,114 @@
           }
         }
       }
+    },
+    "alert.disk.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$@ free."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ tem %2$@ livres."
+          }
+        }
+      },
+      "comment": "Notification body; volume name, free space"
+    },
+    "alert.disk.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low disk space"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pouco espaço em disco"
+          }
+        }
+      },
+      "comment": "Notification title"
+    },
+    "alert.memory.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Mac is running out of memory. Quit apps you are not using."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Mac está ficando sem memória. Encerre os apps que não estiver usando."
+          }
+        }
+      },
+      "comment": "Notification body"
+    },
+    "alert.memory.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Critical memory pressure"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pressão de memória crítica"
+          }
+        }
+      },
+      "comment": "Notification title"
+    },
+    "alert.temperature.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The CPU is at %@."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A CPU está a %@."
+          }
+        }
+      },
+      "comment": "Notification body; formatted temperature"
+    },
+    "alert.temperature.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High temperature"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatura elevada"
+          }
+        }
+      },
+      "comment": "Notification title"
     },
     "app.name": {
       "comment": "App name (working title)",
@@ -331,6 +475,24 @@
         }
       }
     },
+    "battery.history.accessibility": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From %1$@ at %2$@ to %3$@ now"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De %1$@ às %2$@ para %3$@ agora"
+          }
+        }
+      },
+      "comment": "Chart description; start level, start time, current level"
+    },
     "battery.lastFullCharge": {
       "comment": "Relative date and time",
       "extractionState": "manual",
@@ -399,6 +561,60 @@
           }
         }
       }
+    },
+    "battery.lowPowerMode.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens Battery settings"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre os Ajustes de Bateria"
+          }
+        }
+      },
+      "comment": "VoiceOver hint"
+    },
+    "battery.none": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This Mac has no battery."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este Mac não tem bateria."
+          }
+        }
+      },
+      "comment": "Empty state"
+    },
+    "battery.none.short": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No battery"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem bateria"
+          }
+        }
+      },
+      "comment": "Panel subtitle on desktop Macs"
     },
     "battery.onBattery": {
       "extractionState": "manual",
@@ -676,6 +892,48 @@
         }
       }
     },
+    "cpu.cores": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld core"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld cores"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld núcleo"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld núcleos"
+                }
+              }
+            }
+          }
+        }
+      },
+      "comment": "Core count"
+    },
     "cpu.efficiencyCores": {
       "comment": "Efficiency core count",
       "extractionState": "manual",
@@ -750,15 +1008,39 @@
       "extractionState": "manual",
       "localizations": {
         "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld performance"
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld performance"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld performance"
+                }
+              }
+            }
           }
         },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld de desempenho"
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld de desempenho"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld de desempenho"
+                }
+              }
+            }
           }
         }
       }
@@ -1128,19 +1410,43 @@
       }
     },
     "disk.volumesConnected": {
-      "comment": "Needs plural variants",
+      "comment": "Volume count",
       "extractionState": "manual",
       "localizations": {
         "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld volumes connected"
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld volume connected"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld volumes connected"
+                }
+              }
+            }
           }
         },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld volumes conectados"
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld volume conectado"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld volumes conectados"
+                }
+              }
+            }
           }
         }
       }
@@ -1178,6 +1484,24 @@
           }
         }
       }
+    },
+    "format.pair": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$@"
+          }
+        }
+      },
+      "comment": "Two values joined with a middle dot"
     },
     "memory.apps": {
       "extractionState": "manual",
@@ -1437,6 +1761,114 @@
         }
       }
     },
+    "menubar.battery": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BAT"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BAT"
+          }
+        }
+      },
+      "comment": "Short label for the Mini menu bar style"
+    },
+    "menubar.cpu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        }
+      },
+      "comment": "Short label for the Mini menu bar style"
+    },
+    "menubar.disk": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DISK"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DISCO"
+          }
+        }
+      },
+      "comment": "Short label for the Mini menu bar style"
+    },
+    "menubar.memory": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RAM"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RAM"
+          }
+        }
+      },
+      "comment": "Short label for the Mini menu bar style"
+    },
+    "menubar.network": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NET"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "REDE"
+          }
+        }
+      },
+      "comment": "Short label for the Mini menu bar style"
+    },
+    "menubar.sensors": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TEMP"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TEMP"
+          }
+        }
+      },
+      "comment": "Short label for the Mini menu bar style"
+    },
     "module.battery": {
       "extractionState": "manual",
       "localizations": {
@@ -1573,6 +2005,23 @@
         }
       }
     },
+    "network.chart.accessibility": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download above the line and upload below, last 60 seconds"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download acima da linha e upload abaixo, últimos 60 segundos"
+          }
+        }
+      }
+    },
     "network.download": {
       "extractionState": "manual",
       "localizations": {
@@ -1654,6 +2103,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "IP local"
+          }
+        }
+      }
+    },
+    "network.offline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not connected"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem conexão"
           }
         }
       }
@@ -1760,6 +2226,60 @@
         }
       }
     },
+    "overview.status.battery": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low battery"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bateria fraca"
+          }
+        }
+      },
+      "comment": "Status pill"
+    },
+    "overview.status.cpu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High CPU"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU elevada"
+          }
+        }
+      },
+      "comment": "Status pill"
+    },
+    "overview.status.disk": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low disk space"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pouco espaço"
+          }
+        }
+      },
+      "comment": "Status pill"
+    },
     "overview.status.normal": {
       "comment": "Health pill when no alert is active",
       "extractionState": "manual",
@@ -1777,6 +2297,24 @@
           }
         }
       }
+    },
+    "overview.status.temperature": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High temperature"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatura alta"
+          }
+        }
+      },
+      "comment": "Status pill"
     },
     "overview.title": {
       "comment": "Panel title and back button",
@@ -1831,6 +2369,170 @@
         }
       }
     },
+    "sensors.all": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All sensors"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os sensores"
+          }
+        }
+      }
+    },
+    "sensors.fan": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fan %lld"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ventoinha %lld"
+          }
+        }
+      },
+      "comment": "Fan number"
+    },
+    "sensors.fans": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld fan"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld fans"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld ventoinha"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld ventoinhas"
+                }
+              }
+            }
+          }
+        }
+      },
+      "comment": "Fan count"
+    },
+    "sensors.fansTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fans"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ventoinhas"
+          }
+        }
+      }
+    },
+    "sensors.noFans": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No fans"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem ventoinhas"
+          }
+        }
+      },
+      "comment": "Subtitle on fanless Macs"
+    },
+    "sensors.speed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidade"
+          }
+        }
+      }
+    },
+    "sensors.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperature sensors are not available on this Mac."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os sensores de temperatura não estão disponíveis neste Mac."
+          }
+        }
+      },
+      "comment": "Empty state"
+    },
+    "settings.about": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobre"
+          }
+        }
+      }
+    },
     "settings.alerts": {
       "extractionState": "manual",
       "localizations": {
@@ -1844,6 +2546,126 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alertas"
+          }
+        }
+      }
+    },
+    "settings.alerts.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications when a reading stays out of range"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificações quando uma leitura sai do normal"
+          }
+        }
+      }
+    },
+    "settings.alerts.duration": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For at least"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por pelo menos"
+          }
+        }
+      }
+    },
+    "settings.alerts.threshold": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Threshold"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite"
+          }
+        }
+      }
+    },
+    "settings.battery.alert": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notify when charge drops to %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avisar quando a carga chegar a %@"
+          }
+        }
+      },
+      "comment": "Formatted percent"
+    },
+    "settings.battery.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Charge, health and Bluetooth devices"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carga, saúde e dispositivos Bluetooth"
+          }
+        }
+      }
+    },
+    "settings.bluetooth.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery levels of connected devices"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nível de bateria dos dispositivos conectados"
+          }
+        }
+      }
+    },
+    "settings.bluetooth.show": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show device batteries in the battery panel"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar baterias dos dispositivos no painel de bateria"
           }
         }
       }
@@ -1917,6 +2739,41 @@
         }
       }
     },
+    "settings.disk.alert": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notify when the startup disk has less than %@ free"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avisar quando o disco de inicialização tiver menos de %@ livres"
+          }
+        }
+      },
+      "comment": "Formatted percent"
+    },
+    "settings.disk.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volumes, activity and drive health"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volumes, atividade e saúde do disco"
+          }
+        }
+      }
+    },
     "settings.general": {
       "extractionState": "manual",
       "localizations": {
@@ -1930,6 +2787,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geral"
+          }
+        }
+      }
+    },
+    "settings.general.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language and startup"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma e inicialização"
           }
         }
       }
@@ -1987,6 +2861,23 @@
         }
       }
     },
+    "settings.language.footer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulso restarts to apply the new language."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Pulso reinicia para aplicar o novo idioma."
+          }
+        }
+      }
+    },
     "settings.language.portuguese": {
       "comment": "Always shown in its own language",
       "extractionState": "manual",
@@ -2039,6 +2930,40 @@
         }
       }
     },
+    "settings.memory.alert": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notify when memory pressure is critical"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avisar quando a pressão de memória ficar crítica"
+          }
+        }
+      }
+    },
+    "settings.memory.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usage, pressure and processes"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uso, pressão e processos"
+          }
+        }
+      }
+    },
     "settings.menuBar": {
       "extractionState": "manual",
       "localizations": {
@@ -2052,6 +2977,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "Barra de menus"
+          }
+        }
+      }
+    },
+    "settings.menuBar.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which modules appear in the menu bar, and in what order"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quais módulos aparecem na barra de menus e em que ordem"
+          }
+        }
+      }
+    },
+    "settings.menuBar.footer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose each module's style and color in its own pane."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolha o estilo e a cor de cada módulo no painel dele."
+          }
+        }
+      }
+    },
+    "settings.menuBar.order": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shown in the menu bar"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exibidos na barra de menus"
+          }
+        }
+      }
+    },
+    "settings.moduleDisabled": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Module off"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Módulo desativado"
           }
         }
       }
@@ -2086,6 +3079,110 @@
           "stringUnit": {
             "state": "translated",
             "value": "Módulos"
+          }
+        }
+      }
+    },
+    "settings.moveDown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move %@ down"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mover %@ para baixo"
+          }
+        }
+      },
+      "comment": "VoiceOver label; module name"
+    },
+    "settings.moveUp": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move %@ up"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mover %@ para cima"
+          }
+        }
+      },
+      "comment": "VoiceOver label; module name"
+    },
+    "settings.network.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traffic, addresses and latency"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tráfego, endereços e latência"
+          }
+        }
+      }
+    },
+    "settings.network.latencyHost": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latency host"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Host de latência"
+          }
+        }
+      }
+    },
+    "settings.network.publicIP.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looks up your address at api.ipify.org"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consulta seu endereço em api.ipify.org"
+          }
+        }
+      }
+    },
+    "settings.network.publicIP.footer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The public IP lookup and the latency check contact external servers, and only run while the network panel is open."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A consulta do IP público e o teste de latência acessam servidores externos e só rodam com o painel de rede aberto."
           }
         }
       }
@@ -2141,6 +3238,58 @@
         }
       }
     },
+    "settings.sensors.alert": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notify when the CPU reaches %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avisar quando a CPU chegar a %@"
+          }
+        }
+      },
+      "comment": "Formatted temperature"
+    },
+    "settings.sensors.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatures and fans"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperaturas e ventoinhas"
+          }
+        }
+      }
+    },
+    "settings.startup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Startup"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicialização"
+          }
+        }
+      }
+    },
     "settings.style": {
       "extractionState": "manual",
       "localizations": {
@@ -2157,6 +3306,24 @@
           }
         }
       }
+    },
+    "settings.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulso Settings"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes do Pulso"
+          }
+        }
+      },
+      "comment": "Window title"
     },
     "settings.updateInterval": {
       "extractionState": "manual",
@@ -2176,19 +3343,60 @@
       }
     },
     "settings.updateInterval.seconds": {
-      "comment": "Needs plural variants",
+      "comment": "Interval in seconds",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld second"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld seconds"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld segundo"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld segundos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "settings.version": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld second"
+            "value": "Version %@"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld segundo"
+            "value": "Versão %@"
           }
         }
       }
@@ -2210,6 +3418,91 @@
         }
       }
     },
+    "settings.widgets.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desktop widgets for CPU, memory and network"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets de mesa para CPU, memória e rede"
+          }
+        }
+      }
+    },
+    "settings.widgets.footer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS decides when widgets refresh, usually about once a minute. Each widget shows when its data was taken. To add one, right-click the desktop and choose Edit Widgets."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O macOS decide quando os widgets atualizam, em geral cerca de uma vez por minuto. Cada widget mostra a hora dos dados. Para adicionar, clique com o botão direito na mesa e escolha Editar Widgets."
+          }
+        }
+      }
+    },
+    "settings.widgets.update": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update desktop widgets"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atualizar os widgets de mesa"
+          }
+        }
+      }
+    },
+    "state.off": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desativado"
+          }
+        }
+      }
+    },
+    "state.on": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ativado"
+          }
+        }
+      }
+    },
     "style.bars": {
       "extractionState": "manual",
       "localizations": {
@@ -2226,6 +3519,24 @@
           }
         }
       }
+    },
+    "style.battery": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bateria"
+          }
+        }
+      },
+      "comment": "Menu bar style"
     },
     "style.dot": {
       "extractionState": "manual",
@@ -2311,6 +3622,129 @@
           }
         }
       }
+    },
+    "unit.degrees": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@°"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@°"
+          }
+        }
+      },
+      "comment": "Compact temperature for the menu bar"
+    },
+    "unit.perSecond": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@/s"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@/s"
+          }
+        }
+      },
+      "comment": "Transfer rate; formatted byte count"
+    },
+    "unit.rpm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ rpm"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ rpm"
+          }
+        }
+      },
+      "comment": "Fan speed; formatted number"
+    },
+    "widget.cpu.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU usage and temperature."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uso e temperatura da CPU."
+          }
+        }
+      }
+    },
+    "widget.memory.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memory in use."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memória em uso."
+          }
+        }
+      }
+    },
+    "widget.network.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download and upload rates."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taxas de download e upload."
+          }
+        }
+      }
+    },
+    "widget.updated": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@"
+          }
+        }
+      },
+      "comment": "Time the widget data was taken; formatted time"
     }
   },
   "version": "1.0"

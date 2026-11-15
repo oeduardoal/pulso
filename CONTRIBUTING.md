@@ -12,7 +12,8 @@ Thanks for helping. This guide covers how to set up the project, the conventions
 
 1. Install Xcode 26 or later and [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
 2. Run `xcodegen generate` to create `Pulso.xcodeproj`. Run it again whenever you add, move or remove a source file. The project file is generated and not checked in, so edit `project.yml` for build settings.
-3. Open `Pulso.xcodeproj` and run the `Pulso` scheme.
+3. Open `Pulso.xcodeproj` and run the `Pulso` scheme. Signing uses the maintainer's team; see "Build from source" in the README to use your own.
+4. Run the tests with `xcodebuild -project Pulso.xcodeproj -scheme Pulso -derivedDataPath build test`.
 
 ## Conventions
 
@@ -50,7 +51,8 @@ Thanks for helping. This guide covers how to set up the project, the conventions
 3. Write commit messages in the imperative mood ("Add CPU sampler", not "Added CPU sampler"). Keep the first line under 72 characters.
 4. Add an entry under `Unreleased` in [`CHANGELOG.md`](CHANGELOG.md) for any user-visible change.
 5. Before opening the pull request:
-   - the app builds with no warnings,
+   - the app builds with no warnings and the tests pass,
+   - with the panel closed, Pulso still uses well under 1% CPU (check with `ps -o %cpu -p $(pgrep -x Pulso)`),
    - you ran it and checked the affected screens in English and Portuguese,
    - UI changes include before and after screenshots in the pull request.
 

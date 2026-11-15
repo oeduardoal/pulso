@@ -1,4 +1,6 @@
 # XcodeGen spec. Run `xcodegen generate` after adding or removing files.
+# Contributors without access to the E-Dew team: set DEVELOPMENT_TEAM to your own team and
+# change the app group prefix in Pulso/Shared/WidgetSnapshot.swift and both .entitlements files.
 name: Pulso
 options:
   bundleIdPrefix: com.edew
@@ -12,7 +14,12 @@ settings:
     MARKETING_VERSION: "0.1.0"
     CURRENT_PROJECT_VERSION: "1"
     LOCALIZATION_PREFERS_STRING_CATALOGS: YES
-    SWIFT_EMIT_LOC_STRINGS: YES
+    SWIFT_EMIT_LOC_STRINGS: NO
+    DEVELOPMENT_TEAM: 6HC4RKRHXD
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "Apple Development"
+    ENABLE_HARDENED_RUNTIME: YES
+    DEAD_CODE_STRIPPING: YES
 targets:
   Pulso:
     type: application
@@ -21,16 +28,70 @@ targets:
       - Pulso
       - path: localization/Localizable.xcstrings
         buildPhase: resources
+    dependencies:
+      - target: PulsoWidgets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.edew.pulso
+        GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_LSUIElement: YES
         INFOPLIST_KEY_CFBundleDisplayName: Pulso
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
         INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 Eduardo Almeida. MIT License."
-        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_OBJC_BRIDGING_HEADER: Pulso/Hardware/Pulso-Bridging-Header.h
+        CODE_SIGN_ENTITLEMENTS: Pulso/Pulso.entitlements
         # Distributed with Developer ID outside the Mac App Store: sensors need unsandboxed access.
         ENABLE_APP_SANDBOX: NO
-        ENABLE_HARDENED_RUNTIME: YES
-        CODE_SIGN_STYLE: Automatic
+  PulsoWidgets:
+    type: app-extension
+    platform: macOS
+    sources:
+      - PulsoWidgets
+      - Pulso/Shared/Format.swift
+      - Pulso/Shared/Localization.swift
+      - Pulso/Shared/Module.swift
+      - Pulso/Shared/WidgetSnapshot.swift
+      - path: localization/Localizable.xcstrings
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.edew.pulso.widgets
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Pulso
+        INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 Eduardo Almeida. MIT License."
+        CODE_SIGN_ENTITLEMENTS: PulsoWidgets/PulsoWidgets.entitlements
+        ENABLE_APP_SANDBOX: YES
+        SKIP_INSTALL: YES
+    info:
+      path: PulsoWidgets/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+  PulsoTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - PulsoTests
+      - Pulso/Sampling/NettopParser.swift
+      - Pulso/Sampling/Series.swift
+      - Pulso/Shared/Preferences.swift
+      - Pulso/Shared/Module.swift
+      - Pulso/Shared/Localization.swift
+      - path: localization/Localizable.xcstrings
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.edew.pulso.tests
+        GENERATE_INFOPLIST_FILE: YES
         CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+schemes:
+  Pulso:
+    build:
+      targets:
+        Pulso: all
+        PulsoTests: [test]
+    test:
+      targets:
+        - PulsoTests
