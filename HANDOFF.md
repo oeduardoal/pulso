@@ -113,6 +113,16 @@ These are recommendations. Verify API names and availability against current App
 
 Ask the owner before settling any of these.
 
+Settled on 2026-11-15:
+
+- **Distribution:** outside the Mac App Store, Developer ID and notarized, unsandboxed, with full sensors.
+- **Minimum macOS:** 26. The panel uses Liquid Glass (`NSGlassEffectView`).
+- **Appearance:** dark glass only.
+- **Name and bundle identifier:** Pulso, `com.edew.pulso`.
+- **License:** MIT, open source.
+
+Still open: 2, 3, 4 and 7.
+
 1. **Distribution.** Temperature and fan readings rely on private interfaces that do not work inside the App Sandbox. Either distribute outside the Mac App Store (Developer ID, notarized) with full sensors, or ship a sandboxed App Store build without them.
 2. **Low Power Mode switch.** Reading the state is public API. Changing it is not: it needs `pmset` with administrator rights or a Shortcuts action. Options are a privileged helper, opening Battery settings instead, or showing the state read-only.
 3. **Public IP.** It requires contacting an external server. Keep it off by default and say so in Settings.

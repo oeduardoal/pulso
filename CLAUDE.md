@@ -21,5 +21,8 @@ Menu bar system monitor for macOS. Read `HANDOFF.md` before writing any code: it
 ## Workflow
 
 - Verify API names and availability against current Apple documentation before relying on them. The pointers in `HANDOFF.md` are starting points, not guarantees.
+- The Xcode project is generated from `project.yml` with XcodeGen. Run `xcodegen generate` after adding or removing files; never edit `Pulso.xcodeproj` by hand.
 - Build and run after each milestone listed in `HANDOFF.md`, and compare against the matching screenshot.
+- This is an open source project. Keep `README.md` (roadmap) and `CHANGELOG.md` (`Unreleased`) current with each user-visible change, and follow `CONTRIBUTING.md`.
+- Code, comments, commit messages and docs are in English.
 - Ask before deciding any item under "Open decisions" in `HANDOFF.md`.

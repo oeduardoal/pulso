@@ -1,0 +1,51 @@
+name: Bug report
+description: Something in Pulso does not work as expected.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the panel
+        2. Click the CPU tile
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: pulso-version
+    attributes:
+      label: Pulso version
+      description: In Finder, select Pulso.app and choose File > Get Info.
+    validations:
+      required: true
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: macOS 26.1
+    validations:
+      required: true
+  - type: input
+    id: mac-model
+    attributes:
+      label: Mac model
+      placeholder: MacBook Pro 14-inch, M3 Pro
+  - type: dropdown
+    id: language
+    attributes:
+      label: App language
+      options:
+        - English
+        - Português (Brasil)
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or logs

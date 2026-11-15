@@ -157,6 +157,24 @@
         }
       }
     },
+    "action.quit": {
+      "comment": "Status item right-click menu",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit Pulso"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encerrar o Pulso"
+          }
+        }
+      }
+    },
     "action.settings": {
       "extractionState": "manual",
       "localizations": {
