@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulso: painel de memória</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+</style>
+<style>html{background:#0b0f1a}body{display:flex;justify-content:center}body>div{flex:none}</style>
+</head>
+<body>
+<div style="width: 420px; height: 820px; position: relative; overflow: hidden; background: linear-gradient(180deg, #071230 0%, #0f3566 34%, #2f6f9c 52%, #e9a06a 66%, #f7c88f 74%); font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Inter, system-ui, sans-serif; color: rgba(255,255,255,0.96); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased">
+
+<svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<path d="M0 640 C 220 560 420 680 720 610 S 1200 500 1440 560 V900 H0 Z" fill="#2b7391"></path>
+<path d="M0 720 C 260 640 520 760 820 690 S 1260 600 1440 660 V900 H0 Z" fill="#1b5676"></path>
+<path d="M0 800 C 300 730 600 840 900 770 S 1300 700 1440 750 V900 H0 Z" fill="#103a5a"></path>
+<path d="M0 870 C 320 810 680 900 1000 840 S 1340 800 1440 830 V900 H0 Z" fill="#08233d"></path>
+</svg>
+
+<div style="position: absolute; top: 24px; left: 24px; width: 372px; padding: 16px; display: flex; flex-direction: column; gap: 12px; border-radius: 24px; background: rgba(20,24,34,0.66); backdrop-filter: blur(48px) saturate(170%); -webkit-backdrop-filter: blur(48px) saturate(170%); border: 1px solid rgba(255,255,255,0.16); box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.14)">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<a href="overview.html" style="display: flex; align-items: center; gap: 2px; height: 28px; padding: 0 12px 0 6px; border-radius: 14px; background: rgba(255,255,255,0.1); font-size: 12.5px; font-weight: 500">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+<span>Visão geral</span>
+</a>
+<a href="settings.html" aria-label="Ajustes do módulo" style="width: 28px; height: 28px; border-radius: 14px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"></path><circle cx="16" cy="7" r="2"></circle><circle cx="8" cy="17" r="2"></circle></svg>
+</a>
+</div>
+
+<div style="display: flex; align-items: center; gap: 12px; padding: 0 4px">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 10px; background: rgba(84,214,180,0.2); color: #7FE3C8; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="9" rx="2"></rect><path d="M7 16v3M12 16v3M17 16v3M7.5 10.5v2M12 10.5v2M16.5 10.5v2"></path></svg></span>
+<div>
+<h1 style="margin: 0; font-size: 17px; font-weight: 600">Memória</h1>
+<div style="font-size: 12px; color: rgba(255,255,255,0.7)">18 GB de memória unificada</div>
+</div>
+</div>
+
+<div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: flex-start; justify-content: space-between">
+<div>
+<div style="font-family: ui-rounded, 'SF Pro Rounded', -apple-system, Inter, system-ui, sans-serif; font-size: 40px; font-weight: 600; line-height: 44px">11,2 GB</div>
+<div style="font-size: 12px; color: rgba(255,255,255,0.7)">em uso de 18 GB · 62%</div>
+</div>
+<div style="display: flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 12px; background: rgba(107,219,122,0.16); font-size: 12px; font-weight: 500; color: #9BEBA6">
+<span style="width: 6px; height: 6px; border-radius: 3px; background: #6BDB7A"></span>
+<span>Pressão normal</span>
+</div>
+</div>
+<div role="img" aria-label="Composição da memória: apps 6,8 GB, vinculada 2,6 GB, comprimida 1,8 GB, disponível 6,8 GB" style="display: flex; gap: 2px; height: 12px; border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.14)">
+<span style="width: 37.8%; background: #54D6B4"></span>
+<span style="width: 14.4%; background: #FFB454"></span>
+<span style="width: 10%; background: #5AB0FF"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; row-gap: 6px; font-size: 12px">
+<div style="display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 4px; background: #54D6B4"></span><span style="flex: 1; color: rgba(255,255,255,0.7)">Apps</span><span style="font-weight: 600">6,8 GB</span></div>
+<div style="display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 4px; background: #FFB454"></span><span style="flex: 1; color: rgba(255,255,255,0.7)">Vinculada</span><span style="font-weight: 600">2,6 GB</span></div>
+<div style="display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 4px; background: #5AB0FF"></span><span style="flex: 1; color: rgba(255,255,255,0.7)">Comprimida</span><span style="font-weight: 600">1,8 GB</span></div>
+<div style="display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.3)"></span><span style="flex: 1; color: rgba(255,255,255,0.7)">Disponível</span><span style="font-weight: 600">6,8 GB</span></div>
+</div>
+</div>
+
+<div style="padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7)">
+<span>Pressão de memória</span>
+<span>Últimos 60 segundos</span>
+</div>
+<svg role="img" aria-label="Pressão de memória estável e baixa nos últimos 60 segundos" viewBox="0 0 312 64" preserveAspectRatio="none" style="width: 100%; height: 64px">
+<path d="M0 16H312M0 32H312M0 48H312" stroke="rgba(255,255,255,0.08)" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+<path d="M0 64 V50 L12 49 L24 51 L36 48 L48 47 L60 49 L72 50 L84 46 L96 44 L108 47 L120 49 L132 48 L144 45 L156 47 L168 48 L180 44 L192 40 L204 38 L216 42 L228 46 L240 48 L252 45 L264 47 L276 49 L288 48 L300 46 L312 47 V64 Z" fill="rgba(107,219,122,0.2)"></path>
+<path d="M0 50 L12 49 L24 51 L36 48 L48 47 L60 49 L72 50 L84 46 L96 44 L108 47 L120 49 L132 48 L144 45 L156 47 L168 48 L180 44 L192 40 L204 38 L216 42 L228 46 L240 48 L252 45 L264 47 L276 49 L288 48 L300 46 L312 47" fill="none" stroke="#6BDB7A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">Swap usado</div>
+<div style="font-size: 15px; font-weight: 600">1,2 GB</div>
+</div>
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">Em cache</div>
+<div style="font-size: 15px; font-weight: 600">3,1 GB</div>
+</div>
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">Livre</div>
+<div style="font-size: 15px; font-weight: 600">3,7 GB</div>
+</div>
+</div>
+
+<div style="padding: 12px 14px 8px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7)">
+<span>Processos</span>
+<span>Memória</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 56px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Safari</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 100%; height: 100%; border-radius: 2px; background: #54D6B4"></span></span>
+<span style="text-align: right; font-weight: 500">2,1 GB</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 56px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Xcode</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 86%; height: 100%; border-radius: 2px; background: #54D6B4"></span></span>
+<span style="text-align: right; font-weight: 500">1,8 GB</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 56px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Docker</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 67%; height: 100%; border-radius: 2px; background: #54D6B4"></span></span>
+<span style="text-align: right; font-weight: 500">1,4 GB</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 56px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Slack</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 37%; height: 100%; border-radius: 2px; background: #54D6B4"></span></span>
+<span style="text-align: right; font-weight: 500">780 MB</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 56px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>node</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 30%; height: 100%; border-radius: 2px; background: #54D6B4"></span></span>
+<span style="text-align: right; font-weight: 500">640 MB</span>
+</div>
+</div>
+
+<button type="button" style="height: 34px; border: 0; border-radius: 11px; background: rgba(255,255,255,0.12); font-size: 12.5px; font-weight: 600">Abrir Monitor de Atividade</button>
+
+</div>
+
+</div>
+</body>
+</html>

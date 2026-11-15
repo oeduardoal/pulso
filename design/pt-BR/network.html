@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulso: painel de rede</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+</style>
+<style>html{background:#0b0f1a}body{display:flex;justify-content:center}body>div{flex:none}</style>
+</head>
+<body>
+<div style="width: 420px; height: 820px; position: relative; overflow: hidden; background: linear-gradient(180deg, #071230 0%, #0f3566 34%, #2f6f9c 52%, #e9a06a 66%, #f7c88f 74%); font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Inter, system-ui, sans-serif; color: rgba(255,255,255,0.96); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased">
+
+<svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<path d="M0 640 C 220 560 420 680 720 610 S 1200 500 1440 560 V900 H0 Z" fill="#2b7391"></path>
+<path d="M0 720 C 260 640 520 760 820 690 S 1260 600 1440 660 V900 H0 Z" fill="#1b5676"></path>
+<path d="M0 800 C 300 730 600 840 900 770 S 1300 700 1440 750 V900 H0 Z" fill="#103a5a"></path>
+<path d="M0 870 C 320 810 680 900 1000 840 S 1340 800 1440 830 V900 H0 Z" fill="#08233d"></path>
+</svg>
+
+<div style="position: absolute; top: 24px; left: 24px; width: 372px; padding: 16px; display: flex; flex-direction: column; gap: 12px; border-radius: 24px; background: rgba(20,24,34,0.66); backdrop-filter: blur(48px) saturate(170%); -webkit-backdrop-filter: blur(48px) saturate(170%); border: 1px solid rgba(255,255,255,0.16); box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.14)">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<a href="overview.html" style="display: flex; align-items: center; gap: 2px; height: 28px; padding: 0 12px 0 6px; border-radius: 14px; background: rgba(255,255,255,0.1); font-size: 12.5px; font-weight: 500">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+<span>Visão geral</span>
+</a>
+<a href="settings.html" aria-label="Ajustes do módulo" style="width: 28px; height: 28px; border-radius: 14px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"></path><circle cx="16" cy="7" r="2"></circle><circle cx="8" cy="17" r="2"></circle></svg>
+</a>
+</div>
+
+<div style="display: flex; align-items: center; gap: 12px; padding: 0 4px">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 10px; background: rgba(90,176,255,0.2); color: #8CC8FF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 19V6M4.5 9.5 8 6l3.5 3.5M16 5v13M12.5 14.5 16 18l3.5-3.5"></path></svg></span>
+<div>
+<h1 style="margin: 0; font-size: 17px; font-weight: 600">Rede</h1>
+<div style="font-size: 12px; color: rgba(255,255,255,0.7)">Wi‑Fi · Casa 5G</div>
+</div>
+</div>
+
+<div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 10px">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div>
+<div style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; color: #8CC8FF"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>Download</div>
+<div style="font-family: ui-rounded, 'SF Pro Rounded', -apple-system, Inter, system-ui, sans-serif; font-size: 28px; font-weight: 600; line-height: 34px">2,4 MB/s</div>
+</div>
+<div>
+<div style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; color: #FFB98A"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>Upload</div>
+<div style="font-family: ui-rounded, 'SF Pro Rounded', -apple-system, Inter, system-ui, sans-serif; font-size: 28px; font-weight: 600; line-height: 34px">310 KB/s</div>
+</div>
+</div>
+<svg role="img" aria-label="Download acima da linha e upload abaixo, últimos 60 segundos" viewBox="0 0 312 96" preserveAspectRatio="none" style="width: 100%; height: 96px">
+<path d="M0 64 V48 L12 44 L24 50 L36 34 L48 26 L60 38 L72 42 L84 30 L96 18 L108 28 L120 40 L132 34 L144 24 L156 32 L168 28 L180 22 L192 30 L204 26 L216 34 L228 38 L240 32 L252 40 L264 44 L276 36 L288 42 L300 46 L312 40 V64 Z" fill="rgba(90,176,255,0.22)"></path>
+<path d="M0 48 L12 44 L24 50 L36 34 L48 26 L60 38 L72 42 L84 30 L96 18 L108 28 L120 40 L132 34 L144 24 L156 32 L168 28 L180 22 L192 30 L204 26 L216 34 L228 38 L240 32 L252 40 L264 44 L276 36 L288 42 L300 46 L312 40" fill="none" stroke="#5AB0FF" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+<path d="M0 64 V70 L12 72 L24 69 L36 74 L48 76 L60 71 L72 70 L84 73 L96 78 L108 74 L120 71 L132 72 L144 76 L156 73 L168 72 L180 75 L192 77 L204 80 L216 76 L228 72 L240 71 L252 74 L264 72 L276 70 L288 71 L300 73 L312 72 V64 Z" fill="rgba(255,159,90,0.24)"></path>
+<path d="M0 70 L12 72 L24 69 L36 74 L48 76 L60 71 L72 70 L84 73 L96 78 L108 74 L120 71 L132 72 L144 76 L156 73 L168 72 L180 75 L192 77 L204 80 L216 76 L228 72 L240 71 L252 74 L264 72 L276 70 L288 71 L300 73 L312 72" fill="none" stroke="#FF9F5A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+<path d="M0 64H312" stroke="rgba(255,255,255,0.24)" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+</svg>
+<div style="display: flex; justify-content: space-between; font-size: 11.5px; color: rgba(255,255,255,0.7)">
+<span>Últimos 60 segundos</span>
+<span>Pico de 6,8 MB/s</span>
+</div>
+</div>
+
+<div style="padding: 4px 14px; border-radius: 16px; background: rgba(255,255,255,0.08); font-size: 12.5px">
+<div style="display: flex; align-items: center; justify-content: space-between; height: 34px">
+<span style="color: rgba(255,255,255,0.7)">IP local</span>
+<span style="display: flex; align-items: center; gap: 8px">
+<span style="font-weight: 500">192.168.0.12</span>
+<button type="button" aria-label="Copiar IP local" style="width: 24px; height: 24px; padding: 0; border: 0; border-radius: 7px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"></rect><path d="M15 5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15"></path></svg></button>
+</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; height: 34px; border-top: 1px solid rgba(255,255,255,0.08)">
+<span style="color: rgba(255,255,255,0.7)">IP público</span>
+<span style="display: flex; align-items: center; gap: 8px">
+<span style="font-weight: 500">203.0.113.24</span>
+<button type="button" aria-label="Copiar IP público" style="width: 24px; height: 24px; padding: 0; border: 0; border-radius: 7px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"></rect><path d="M15 5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15"></path></svg></button>
+</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; height: 34px; border-top: 1px solid rgba(255,255,255,0.08)">
+<span style="color: rgba(255,255,255,0.7)">Interface</span>
+<span style="font-weight: 500">en0 · Wi‑Fi 6</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; height: 34px; border-top: 1px solid rgba(255,255,255,0.08)">
+<span style="color: rgba(255,255,255,0.7)">Latência</span>
+<span style="font-weight: 500">14 ms</span>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">Baixado hoje</div>
+<div style="font-size: 15px; font-weight: 600">3,8 GB</div>
+</div>
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">Enviado hoje</div>
+<div style="font-size: 15px; font-weight: 600">412 MB</div>
+</div>
+</div>
+
+<div style="padding: 12px 14px 8px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7)">
+<span>Processos</span>
+<span>Tráfego</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 64px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Safari</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 100%; height: 100%; border-radius: 2px; background: #5AB0FF"></span></span>
+<span style="text-align: right; font-weight: 500">1,6 MB/s</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 64px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Docker</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 34%; height: 100%; border-radius: 2px; background: #5AB0FF"></span></span>
+<span style="text-align: right; font-weight: 500">540 KB/s</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 64px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Slack</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 13%; height: 100%; border-radius: 2px; background: #5AB0FF"></span></span>
+<span style="text-align: right; font-weight: 500">210 KB/s</span>
+</div>
+</div>
+
+<button type="button" style="height: 34px; border: 0; border-radius: 11px; background: rgba(255,255,255,0.12); font-size: 12.5px; font-weight: 600">Abrir Ajustes de Rede</button>
+
+</div>
+
+</div>
+</body>
+</html>

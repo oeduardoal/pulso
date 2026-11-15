@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulso: disk panel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+</style>
+<style>html{background:#0b0f1a}body{display:flex;justify-content:center}body>div{flex:none}</style>
+</head>
+<body>
+<div style="width: 420px; height: 820px; position: relative; overflow: hidden; background: linear-gradient(180deg, #071230 0%, #0f3566 34%, #2f6f9c 52%, #e9a06a 66%, #f7c88f 74%); font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Inter, system-ui, sans-serif; color: rgba(255,255,255,0.96); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased">
+
+<svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<path d="M0 640 C 220 560 420 680 720 610 S 1200 500 1440 560 V900 H0 Z" fill="#2b7391"></path>
+<path d="M0 720 C 260 640 520 760 820 690 S 1260 600 1440 660 V900 H0 Z" fill="#1b5676"></path>
+<path d="M0 800 C 300 730 600 840 900 770 S 1300 700 1440 750 V900 H0 Z" fill="#103a5a"></path>
+<path d="M0 870 C 320 810 680 900 1000 840 S 1340 800 1440 830 V900 H0 Z" fill="#08233d"></path>
+</svg>
+
+<div style="position: absolute; top: 24px; left: 24px; width: 372px; padding: 16px; display: flex; flex-direction: column; gap: 12px; border-radius: 24px; background: rgba(20,24,34,0.66); backdrop-filter: blur(48px) saturate(170%); -webkit-backdrop-filter: blur(48px) saturate(170%); border: 1px solid rgba(255,255,255,0.16); box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.14)">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<a href="overview.html" style="display: flex; align-items: center; gap: 2px; height: 28px; padding: 0 12px 0 6px; border-radius: 14px; background: rgba(255,255,255,0.1); font-size: 12.5px; font-weight: 500">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+<span>Overview</span>
+</a>
+<a href="settings.html" aria-label="Module settings" style="width: 28px; height: 28px; border-radius: 14px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"></path><circle cx="16" cy="7" r="2"></circle><circle cx="8" cy="17" r="2"></circle></svg>
+</a>
+</div>
+
+<div style="display: flex; align-items: center; gap: 12px; padding: 0 4px">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 10px; background: rgba(255,180,84,0.2); color: #FFC47A; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="3"></rect><path d="M4 14h16M16 16.6h.5"></path></svg></span>
+<div>
+<h1 style="margin: 0; font-size: 17px; font-weight: 600">Disk</h1>
+<div style="font-size: 12px; color: rgba(255,255,255,0.7)">2 volumes connected</div>
+</div>
+</div>
+
+<div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; justify-content: space-between; min-height: 34px">
+<div>
+<div style="font-size: 13px; font-weight: 600">Macintosh HD</div>
+<div style="font-size: 12px; color: rgba(255,255,255,0.7)">Internal SSD · APFS</div>
+</div>
+<span style="height: 22px; padding: 0 9px; border-radius: 11px; background: rgba(255,255,255,0.1); font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,0.82); display: flex; align-items: center">Startup</span>
+</div>
+<div style="display: flex; align-items: baseline; gap: 6px">
+<span style="font-family: ui-rounded, 'SF Pro Rounded', -apple-system, Inter, system-ui, sans-serif; font-size: 28px; font-weight: 600; line-height: 32px">312 GB</span>
+<span style="font-size: 13px; color: rgba(255,255,255,0.7)">free</span>
+</div>
+<div style="height: 10px; border-radius: 5px; background: rgba(255,255,255,0.14)"><div style="width: 37%; height: 100%; border-radius: 5px; background: #FFB454"></div></div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.7)">
+<span>182 GB used</span>
+<span>494 GB total</span>
+</div>
+</div>
+
+<div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; justify-content: space-between; min-height: 34px">
+<div>
+<div style="font-size: 13px; font-weight: 600">Backup SSD</div>
+<div style="font-size: 12px; color: rgba(255,255,255,0.7)">External · USB‑C · APFS</div>
+</div>
+<button type="button" aria-label="Eject Backup SSD" style="width: 30px; height: 30px; padding: 0; border: 0; border-radius: 15px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l7 9H5zM5 19h14"></path></svg>
+</button>
+</div>
+<div style="display: flex; align-items: baseline; gap: 6px">
+<span style="font-family: ui-rounded, 'SF Pro Rounded', -apple-system, Inter, system-ui, sans-serif; font-size: 28px; font-weight: 600; line-height: 32px">640 GB</span>
+<span style="font-size: 13px; color: rgba(255,255,255,0.7)">free</span>
+</div>
+<div style="height: 10px; border-radius: 5px; background: rgba(255,255,255,0.14)"><div style="width: 36%; height: 100%; border-radius: 5px; background: #FFB454"></div></div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.7)">
+<span>360 GB used</span>
+<span>1 TB total</span>
+</div>
+</div>
+
+<div style="padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 12px">
+<span style="font-weight: 600; color: rgba(255,255,255,0.7)">Activity</span>
+<span style="display: flex; align-items: center; gap: 12px">
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 8px; height: 8px; border-radius: 4px; background: #5AB0FF"></span><span style="color: rgba(255,255,255,0.7)">Read</span><span style="font-weight: 600">12.4 MB/s</span></span>
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 8px; height: 8px; border-radius: 4px; background: #FF9F5A"></span><span style="color: rgba(255,255,255,0.7)">Write</span><span style="font-weight: 600">3.1 MB/s</span></span>
+</span>
+</div>
+<svg role="img" aria-label="Disk read and write over the last 60 seconds" viewBox="0 0 312 64" preserveAspectRatio="none" style="width: 100%; height: 64px">
+<path d="M0 16H312M0 32H312M0 48H312" stroke="rgba(255,255,255,0.08)" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+<path d="M0 64 V44 L12 40 L24 46 L36 30 L48 22 L60 34 L72 38 L84 26 L96 14 L108 24 L120 36 L132 30 L144 20 L156 28 L168 24 L180 18 L192 26 L204 22 L216 30 L228 34 L240 28 L252 36 L264 40 L276 32 L288 38 L300 42 L312 36 V64 Z" fill="rgba(90,176,255,0.18)"></path>
+<path d="M0 44 L12 40 L24 46 L36 30 L48 22 L60 34 L72 38 L84 26 L96 14 L108 24 L120 36 L132 30 L144 20 L156 28 L168 24 L180 18 L192 26 L204 22 L216 30 L228 34 L240 28 L252 36 L264 40 L276 32 L288 38 L300 42 L312 36" fill="none" stroke="#5AB0FF" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+<path d="M0 56 L12 54 L24 57 L36 52 L48 50 L60 55 L72 56 L84 53 L96 48 L108 52 L120 55 L132 54 L144 50 L156 53 L168 54 L180 51 L192 49 L204 47 L216 50 L228 54 L240 55 L252 52 L264 54 L276 56 L288 55 L300 53 L312 54" fill="none" stroke="#FF9F5A" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">SMART</div>
+<div style="font-size: 15px; font-weight: 600">Verified</div>
+</div>
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">Temperature</div>
+<div style="font-size: 15px; font-weight: 600">38 °C</div>
+</div>
+<div style="padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08)">
+<div style="font-size: 11.5px; color: rgba(255,255,255,0.7)">Wear</div>
+<div style="font-size: 15px; font-weight: 600">3%</div>
+</div>
+</div>
+
+<div style="padding: 12px 14px 8px; border-radius: 16px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7)">
+<span>Processes</span>
+<span>Read and write</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 64px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>mds_stores</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 100%; height: 100%; border-radius: 2px; background: #FFB454"></span></span>
+<span style="text-align: right; font-weight: 500">8.2 MB/s</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 72px 64px; align-items: center; gap: 10px; height: 26px; font-size: 12.5px">
+<span>Xcode</span>
+<span style="height: 4px; border-radius: 2px; background: rgba(255,255,255,0.12)"><span style="display: block; width: 56%; height: 100%; border-radius: 2px; background: #FFB454"></span></span>
+<span style="text-align: right; font-weight: 500">4.6 MB/s</span>
+</div>
+</div>
+
+<button type="button" style="height: 34px; border: 0; border-radius: 11px; background: rgba(255,255,255,0.12); font-size: 12.5px; font-weight: 600">Open Disk Utility</button>
+
+</div>
+
+</div>
+</body>
+</html>
