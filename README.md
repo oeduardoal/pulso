@@ -20,7 +20,7 @@ A menu bar system monitor for macOS. CPU, memory, disk, network, battery and sen
   · macOS 26 or later · Apple Silicon and Intel
 </p>
 
-> **Status: 0.1.0, the first public version.** Every module, the settings window, alerts and the desktop widgets work. See [Roadmap](#roadmap) and [Known limitations](#known-limitations).
+> **Status: 0.1, the first public versions.** Every module, the settings window, alerts and the desktop widgets work. See [Roadmap](#roadmap) and [Known limitations](#known-limitations).
 
 ## Features
 
