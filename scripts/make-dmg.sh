@@ -32,7 +32,7 @@ rm -rf "$DERIVED"
 xcodebuild -project Pulso.xcodeproj -scheme Pulso -configuration Release -derivedDataPath "$DERIVED" \
   MARKETING_VERSION="$VERSION" CURRENT_PROJECT_VERSION="$BUILD_NUMBER" \
   CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="$IDENTITY" DEVELOPMENT_TEAM="$TEAM" \
-  OTHER_CODE_SIGN_FLAGS="--timestamp" \
+  OTHER_CODE_SIGN_FLAGS="--timestamp" CODE_SIGN_INJECT_BASE_ENTITLEMENTS=NO \
   -quiet build
 codesign --verify --deep --strict --verbose=1 "$APP"
 
