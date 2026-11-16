@@ -2,9 +2,18 @@
 
 A menu bar system monitor for macOS. CPU, memory, disk, network, battery and sensors in a native glass panel that drops from the menu bar, with desktop widgets and alerts. Available in English and Portuguese (Brazil).
 
-![Pulso overview: the menu bar item, the open panel and desktop widgets](design/screenshots/en/overview.png)
+<p align="center">
+  <img src="docs/images/overview.png" width="320" alt="Pulso overview panel: CPU, memory, startup disk, Wi-Fi and temperatures">
+  &nbsp;
+  <img src="docs/images/sensors.png" width="320" alt="Pulso sensors panel listing every temperature sensor">
+</p>
 
-> **Status: first working version (0.1.0, unreleased).** Every module, the settings window, alerts and the desktop widgets run. The screenshot above is the design target; the app matches it closely. See [Roadmap](#roadmap) and [Known limitations](#known-limitations).
+<p align="center">
+  <a href="https://github.com/oeduardoal/pulso/releases/latest"><b>Download the latest release</b></a>
+  · macOS 26 or later · Apple Silicon and Intel
+</p>
+
+> **Status: 0.1.0, the first public version.** Every module, the settings window, alerts and the desktop widgets work. See [Roadmap](#roadmap) and [Known limitations](#known-limitations).
 
 "Pulso" is a working title.
 
@@ -18,6 +27,14 @@ A menu bar system monitor for macOS. CPU, memory, disk, network, battery and sen
 - **Localized**: English and Portuguese (Brazil), with locale-aware numbers, units and dates.
 - **Light on resources**: the monitor should not show up in its own process list.
 
+## Settings
+
+Pick which modules appear in the menu bar, in what order and in which style, and tune each module's panel and alerts.
+
+<p align="center">
+  <img src="docs/images/settings.png" width="680" alt="Pulso settings window on the CPU pane: menu bar style, color, update interval, panel options and alerts">
+</p>
+
 ## Requirements
 
 - macOS 26 or later
@@ -27,7 +44,13 @@ Pulso is distributed outside the Mac App Store, signed with Developer ID and not
 
 ## Install
 
-Download `Pulso-x.y.z.dmg` from the latest release on the Releases page of this repository, open it and drag Pulso to Applications. Releases are signed with Developer ID and notarized by Apple; each one lists the DMG's SHA-256.
+1. Download `Pulso-x.y.z.dmg` from the [latest release](https://github.com/oeduardoal/pulso/releases/latest).
+2. Open it and drag Pulso to Applications.
+3. Open Pulso from Applications. It lives in the menu bar; there is no Dock icon.
+
+Releases are signed with Developer ID and notarized by Apple, so they open without a security warning. Each release lists the DMG's SHA-256.
+
+The design mockups the app was built from are in [`design/`](design/).
 
 ## Build from source
 

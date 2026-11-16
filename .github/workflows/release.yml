@@ -92,19 +92,30 @@ jobs:
 
       - name: Release notes
         run: |
-          awk -v version="$VERSION" '
-            $0 ~ "^## \\[" version "\\]" { found = 1; next }
-            found && /^## \[/ { exit }
-            found { print }
-          ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+          REPO_RAW="https://raw.githubusercontent.com/${{ github.repository }}/$TAG"
+          SHA="$(cut -d' ' -f1 "build/Pulso-$VERSION.dmg.sha256")"
           {
+            echo "<p align=\"center\"><img src=\"$REPO_RAW/docs/images/overview.png\" width=\"300\" alt=\"Pulso overview panel\"></p>"
             echo
-            echo "### Install"
+            echo "A menu bar system monitor for macOS: CPU, memory, disk, network, battery and sensors in a native glass panel, with desktop widgets and alerts. English and Portuguese (Brazil)."
             echo
-            echo "Download \`Pulso-$VERSION.dmg\`, open it and drag Pulso to Applications. Requires macOS 26 or later."
+            echo "## Download"
             echo
-            echo "SHA-256: \`$(cut -d' ' -f1 "build/Pulso-$VERSION.dmg.sha256")\`"
-          } >> "$RUNNER_TEMP/notes.md"
+            echo "**[Pulso-$VERSION.dmg](https://github.com/${{ github.repository }}/releases/download/$TAG/Pulso-$VERSION.dmg)**: open it, drag Pulso to Applications, then open Pulso from Applications. It lives in the menu bar."
+            echo
+            echo "Requires macOS 26 or later. Signed with Developer ID and notarized by Apple."
+            echo
+            echo "## What's new"
+            awk -v version="$VERSION" '
+              $0 ~ "^## \\[" version "\\]" { found = 1; next }
+              found && /^## \[/ { exit }
+              found && /^\[.*\]: / { next }
+              found { sub(/^### /, "#### "); print }
+            ' CHANGELOG.md
+            echo
+            echo "<sub>SHA-256 of the DMG: <code>$SHA</code></sub>"
+          } > "$RUNNER_TEMP/notes.md"
+          cat "$RUNNER_TEMP/notes.md"
 
       - name: Publish release
         env:
