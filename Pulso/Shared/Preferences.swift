@@ -10,6 +10,7 @@ enum Pref {
 
     static let menuBarOrder = "menuBar.order"
     static let menuBarHidden = "menuBar.hidden"
+    static let menuBarCompact = "menuBar.compact"
     static let cpuPerCore = "cpu.perCore"
     static let cpuTemperature = "cpu.temperature"
     static let publicIP = "network.publicIP"
@@ -35,6 +36,7 @@ enum Pref {
         var defaults: [String: Any] = [
             menuBarOrder: Module.allCases.map(\.rawValue).joined(separator: ","),
             menuBarHidden: [Module.disk, .battery].map(\.rawValue).joined(separator: ","),
+            menuBarCompact: true,
             cpuPerCore: true,
             cpuTemperature: true,
             publicIP: false,

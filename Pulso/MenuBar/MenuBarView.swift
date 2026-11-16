@@ -6,12 +6,13 @@ struct MenuBarView: View {
     @Environment(Monitor.self) private var monitor
     @AppStorage(Pref.menuBarOrder) private var order = ""
     @AppStorage(Pref.menuBarHidden) private var hidden = ""
+    @AppStorage(Pref.menuBarCompact) private var compact = true
     let onWidthChange: (CGFloat) -> Void
 
     var body: some View {
         let modules = Pref.menuBarModules(order: order, hidden: hidden).filter(Pref.isEnabled)
             .filter { $0 != .battery || monitor.battery.isPresent }
-        HStack(spacing: 12) {
+        HStack(spacing: compact ? 7 : 12) {
             if modules.isEmpty {
                 Image(systemName: "waveform.path.ecg").font(.system(size: 14, weight: .medium))
             }
@@ -20,7 +21,7 @@ struct MenuBarView: View {
             }
         }
         .font(.system(size: 13, weight: .medium).monospacedDigit())
-        .padding(.horizontal, 6)
+        .padding(.horizontal, compact ? 3 : 6)
         // One flattened layer instead of one per shape keeps each second's update cheap.
         .drawingGroup()
         .frame(maxHeight: .infinity)
@@ -46,7 +47,7 @@ private struct MenuBarWidget: View {
 
     var body: some View {
         let reading = MenuBarReading(module: module, monitor: monitor)
-        HStack(spacing: 5) {
+        HStack(spacing: 4) {
             switch style {
             case .mini:
                 // Label stacked over the value, two short lines that fit the menu bar height.
@@ -169,8 +170,9 @@ private struct MenuBarReading {
     static func widest(for module: Module) -> String {
         switch module {
         case .network: Format.rate(88_800_000)
-        case .sensors: Format.degrees(188)
-        default: Format.percent(1)
+        // Two digits; a rare 100% or 100° widens the item only while it lasts.
+        case .sensors: Format.degrees(88)
+        default: Format.percent(0.88)
         }
     }
 }

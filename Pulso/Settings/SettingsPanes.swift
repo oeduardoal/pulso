@@ -66,6 +66,7 @@ enum Relauncher {
 struct MenuBarPane: View {
     @AppStorage(Pref.menuBarOrder) private var order = ""
     @AppStorage(Pref.menuBarHidden) private var hidden = ""
+    @AppStorage(Pref.menuBarCompact) private var compact = true
 
     private var modules: [Module] {
         var list = order.split(separator: ",").compactMap { Module(rawValue: String($0)) }
@@ -76,6 +77,10 @@ struct MenuBarPane: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             SettingsHeader(symbol: SettingsPane.menuBar.symbol, accent: nil, title: L("settings.menuBar"), subtitle: L("settings.menuBar.description"))
+
+            SettingsSection(title: L("settings.menuBar.layout")) {
+                ToggleRow(title: L("settings.menuBar.compact"), detail: L("settings.menuBar.compact.detail"), isOn: $compact)
+            }
 
             SettingsSection(title: L("settings.menuBar.order"), footer: L("settings.menuBar.footer")) {
                 ForEach(Array(modules.enumerated()), id: \.element) { index, module in

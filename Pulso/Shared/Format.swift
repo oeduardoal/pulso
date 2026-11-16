@@ -22,15 +22,16 @@ enum Format {
     }
 
     static func rate(_ bytesPerSecond: Double) -> String {
-        L("unit.perSecond", byteCount(UInt64(max(0, bytesPerSecond)), style: .file))
+        // Adaptive precision reads better for rates: "310 KB/s", "2.4 MB/s".
+        L("unit.perSecond", byteCount(UInt64(max(0, bytesPerSecond)), style: .file, adaptive: true))
     }
 
     /// Three significant digits ("431 GB", "14.1 GB", "2.4 MB"). The format style API always
     /// shows two decimals for gigabytes, which is noisier than the design.
-    private static func byteCount(_ bytes: UInt64, style: ByteCountFormatter.CountStyle) -> String {
+    private static func byteCount(_ bytes: UInt64, style: ByteCountFormatter.CountStyle, adaptive: Bool = false) -> String {
         let formatter = ByteCountFormatter()
         formatter.countStyle = style
-        formatter.isAdaptive = false
+        formatter.isAdaptive = adaptive
         formatter.allowsNonnumericFormatting = false
         formatter.allowedUnits = [.useKB, .useMB, .useGB, .useTB, .usePB]
         return formatter.string(fromByteCount: Int64(clamping: bytes))

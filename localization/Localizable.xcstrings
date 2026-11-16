@@ -2981,6 +2981,40 @@
         }
       }
     },
+    "settings.menuBar.compact": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compact layout"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Layout compacto"
+          }
+        }
+      }
+    },
+    "settings.menuBar.compact.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Less space between modules"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menos espaço entre os módulos"
+          }
+        }
+      }
+    },
     "settings.menuBar.description": {
       "extractionState": "manual",
       "localizations": {
@@ -3011,6 +3045,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escolha o estilo e a cor de cada módulo no painel dele."
+          }
+        }
+      }
+    },
+    "settings.menuBar.layout": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Layout"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Layout"
           }
         }
       }
