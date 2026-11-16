@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed
+
+- The compact menu bar layout fits network rates to their text, so idle rates no longer leave a gap.
+
 ## [0.1.1] - 2026-11-15
 
 ### Added

@@ -111,11 +111,13 @@ private struct MenuBarWidget: View {
 private struct MenuBarRate: View {
     let symbol: String
     let rate: Double
+    @AppStorage(Pref.menuBarCompact) private var compact = true
 
     var body: some View {
         HStack(spacing: 2) {
             Image(systemName: symbol).font(.system(size: 7.5, weight: .bold))
-            StableText(text: Format.rate(rate), widest: Format.rate(88_800_000), alignment: .leading)
+            // Compact fits the text, so idle rates leave no gap; regular reserves room for the widest rate.
+            StableText(text: Format.rate(rate), widest: compact ? Format.rate(rate) : Format.rate(88_800_000), alignment: .leading)
         }
     }
 }
