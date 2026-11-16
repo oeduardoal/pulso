@@ -1,0 +1,62 @@
+{
+  "name": "Pulso",
+  "note": "accent values match the Accent enum in Pulso/Shared/Module.swift and design/tokens.json",
+  "roles": {
+    "primary": "pulseBlue",
+    "background": "ink",
+    "wallpaper": [
+      "midnight",
+      "navy",
+      "dusk",
+      "sunset",
+      "sand"
+    ],
+    "sun": "amber"
+  },
+  "brand": {
+    "midnight": "#071230",
+    "navy": "#0F3566",
+    "dusk": "#2F6F9C",
+    "pulseBlue": "#5AB0FF",
+    "sunset": "#E9A06A",
+    "sand": "#F7C88F"
+  },
+  "accent": {
+    "blue": {
+      "base": "#5AB0FF",
+      "text": "#8CC8FF"
+    },
+    "teal": {
+      "base": "#54D6B4",
+      "text": "#7FE3C8"
+    },
+    "amber": {
+      "base": "#FFB454",
+      "text": "#FFC47A"
+    },
+    "orange": {
+      "base": "#FF9F5A",
+      "text": "#FFB98A"
+    },
+    "green": {
+      "base": "#6BDB7A",
+      "text": "#9BEBA6"
+    },
+    "coral": {
+      "base": "#FF7A6B",
+      "text": "#FFA397"
+    }
+  },
+  "neutral": {
+    "ink": "#0B0F1A",
+    "panel": "#141822",
+    "slate": "#262C3C",
+    "mist": "#B6BAC4",
+    "cloud": "#F2F3F5"
+  },
+  "onLight": {
+    "blue": "#1663C7",
+    "teal": "#0B7F6A",
+    "amber": "#C96F0C"
+  }
+}

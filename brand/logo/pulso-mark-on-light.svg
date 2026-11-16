@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 712 440" width="712" height="440">
+<title>Pulso mark, for light backgrounds</title>
+<defs><linearGradient id="g" x1="36" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1663C7"/><stop offset="1" stop-color="#0B7F6A"/></linearGradient></defs>
+<path d="M36 256 L180 256 L244 116 L336 404 L428 36 L504 256 L600 256" fill="none" stroke="url(#g)" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="668" cy="256" r="30" fill="#C96F0C"/>
+</svg>

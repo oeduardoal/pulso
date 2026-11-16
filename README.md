@@ -94,6 +94,7 @@ To run in Portuguese without changing the system language, pass `-AppleLanguages
 | `PulsoTests/` | Unit tests |
 | `localization/Localizable.xcstrings` | String Catalog for every user-facing string, English and Portuguese (Brazil) |
 | `design/` | HTML mockups, screenshots and design tokens. The source of truth for layout, spacing and color |
+| `brand/` | Brand kit: app icon, logo, menu bar glyph, palette, icon set and a ready-made Xcode asset catalog. Not wired into the app yet; see [`brand/README.md`](brand/README.md) |
 | `project.yml` | XcodeGen spec for the Xcode project |
 | `HANDOFF.md` | Product spec: screens, data sources, architecture and build order |
 | `docs/RELEASING.md` | How to cut, sign and notarize a release |

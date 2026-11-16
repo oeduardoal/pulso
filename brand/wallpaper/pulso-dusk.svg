@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="2880" height="1800" preserveAspectRatio="xMidYMid slice">
+<title>Pulso dusk wallpaper</title>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#071230"/><stop offset="0.34" stop-color="#0F3566"/><stop offset="0.52" stop-color="#2F6F9C"/><stop offset="0.66" stop-color="#E9A06A"/><stop offset="0.74" stop-color="#F7C88F"/></linearGradient></defs>
+<rect width="1440" height="900" fill="url(#sky)"/>
+<circle cx="560" cy="610" r="120" fill="#FFE2B0"/>
+<path d="M0 640 C 220 560 420 680 720 610 S 1200 500 1440 560 V900 H0 Z" fill="#2B7391"/>
+<path d="M0 720 C 260 640 520 760 820 690 S 1260 600 1440 660 V900 H0 Z" fill="#1B5676"/>
+<path d="M0 800 C 300 730 600 840 900 770 S 1300 700 1440 750 V900 H0 Z" fill="#103A5A"/>
+<path d="M0 870 C 320 810 680 900 1000 840 S 1340 800 1440 830 V900 H0 Z" fill="#08233D"/>
+</svg>
