@@ -2,7 +2,7 @@
 
 Pulso is a menu bar system monitor for macOS. It shows CPU, memory, disk, network, battery and sensor readings in a translucent panel that drops from the menu bar, with desktop widgets, alerts and a settings window. The app ships in English and Portuguese (Brazil).
 
-"Pulso" is a working title. Everything in this repository is design and specification; no app code exists yet.
+"Pulso" is a working title. This document is the original specification the app was built from. The design files and this spec remain the reference; the app itself lives alongside them (see the table below and `README.md`).
 
 ## 1. What is in this repository
 
@@ -12,8 +12,12 @@ Pulso is a menu bar system monitor for macOS. It shows CPU, memory, disk, networ
 | `design/en/`, `design/pt-BR/` | One standalone HTML file per screen, per language. All styling is inline. |
 | `design/screenshots/` | PNG render of every screen in both languages, at 2x. |
 | `design/tokens.json` | Shared colors, type, radii, spacing and sizes. |
-| `localization/Localizable.xcstrings` | String Catalog with 133 keys in English and Portuguese (Brazil). |
-| `brand/` | Brand kit: app icon, logo, menu bar glyph, palette and icon set. `brand/ROLLOUT.md` is the brief for applying it. |
+| `localization/Localizable.xcstrings` | String Catalog in English and Portuguese (Brazil), extended as the app grew. |
+| `brand/` | Brand kit: app icon, logo, menu bar glyph, palette and icon set. The app uses its asset catalog; `brand/ROLLOUT.md` is the brief that applied it. |
+| `Pulso/`, `PulsoWidgets/`, `PulsoTests/` | App, widget extension and unit tests, in Swift and SwiftUI. `Pulso/Assets.xcassets` is a copy of `brand/xcode/Assets.xcassets`. |
+| `project.yml` | XcodeGen spec for the Xcode project. |
+| `scripts/`, `.github/workflows/` | DMG build and notarization script, CI and the release workflow. |
+| `docs/` | Release guide and README screenshots. |
 | `CLAUDE.md` | Working instructions for Claude Code. |
 
 The HTML files are a visual reference, not something to embed. Read exact values (padding, radius, font size, color) from the inline styles. All numbers shown in the mockups are sample data for an imaginary MacBook Pro with an M3 Pro chip.

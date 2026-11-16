@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- App icon, shown in Finder, Login Items, notification settings and notification banners.
+- The Pulso glyph in the menu bar when every module's widget is hidden.
+
 ## [0.1.0] - 2026-11-15
 
 ### Added
