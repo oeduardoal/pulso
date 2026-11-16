@@ -1,5 +1,12 @@
 # Pulso
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/logo/pulso-lockup-dark.png">
+    <img src="brand/logo/pulso-lockup-light.png" width="300" alt="Pulso">
+  </picture>
+</p>
+
 A menu bar system monitor for macOS. CPU, memory, disk, network, battery and sensors in a native glass panel that drops from the menu bar, with desktop widgets and alerts. Available in English and Portuguese (Brazil).
 
 <p align="center">
