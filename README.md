@@ -22,8 +22,6 @@ A menu bar system monitor for macOS. CPU, memory, disk, network, battery and sen
 
 > **Status: 0.1.0, the first public version.** Every module, the settings window, alerts and the desktop widgets work. See [Roadmap](#roadmap) and [Known limitations](#known-limitations).
 
-"Pulso" is a working title.
-
 ## Features
 
 - **Menu bar widgets**: one per enabled module, in seven styles (mini, line, bars, ring, speed, battery, dot), monochrome by default.

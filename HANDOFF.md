@@ -2,7 +2,7 @@
 
 Pulso is a menu bar system monitor for macOS. It shows CPU, memory, disk, network, battery and sensor readings in a translucent panel that drops from the menu bar, with desktop widgets, alerts and a settings window. The app ships in English and Portuguese (Brazil).
 
-"Pulso" is a working title. This document is the original specification the app was built from. The design files and this spec remain the reference; the app itself lives alongside them (see the table below and `README.md`).
+This document is the original specification the app was built from. The design files and this spec remain the reference; the app itself lives alongside them (see the table below and `README.md`).
 
 ## 1. What is in this repository
 
@@ -123,7 +123,7 @@ Settled on 2026-11-15:
 - **Distribution:** outside the Mac App Store, Developer ID and notarized, unsandboxed, with full sensors.
 - **Minimum macOS:** 26. The panel uses Liquid Glass (`NSGlassEffectView`).
 - **Appearance:** dark glass only.
-- **Name and bundle identifier:** Pulso, `com.edew.pulso`.
+- **Name and bundle identifier:** Pulso is the final name, with the bundle identifier `com.edew.pulso`.
 - **License:** MIT, open source.
 - **Low Power Mode:** shown read-only; the switch opens Battery settings.
 - **Public IP:** opt-in, off by default, looked up at api.ipify.org while the network panel is open.
