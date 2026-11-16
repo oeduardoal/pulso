@@ -49,10 +49,15 @@ private struct MenuBarWidget: View {
         HStack(spacing: 5) {
             switch style {
             case .mini:
-                Text(L("menubar.\(module.rawValue)"))
-                    .font(.system(size: 10, weight: .semibold))
-                    .foregroundStyle(tint == .primary ? Color.secondary : tint)
-                valueText(reading.text)
+                // Label stacked over the value, two short lines that fit the menu bar height.
+                VStack(alignment: .leading, spacing: -2) {
+                    Text(L("menubar.\(module.rawValue)"))
+                        .font(.system(size: 8.5, weight: .semibold))
+                        .foregroundStyle(tint == .primary ? Color.secondary : tint)
+                    Text(reading.text)
+                        .font(.system(size: 12, weight: .semibold).monospacedDigit())
+                        .frame(minWidth: 30, alignment: .leading)
+                }
             case .line:
                 Sparkline(values: Array(reading.history.suffix(20)), color: tint)
                     .frame(width: 30, height: 14)
