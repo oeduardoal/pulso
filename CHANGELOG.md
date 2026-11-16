@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-15
+
 ### Added
 
 - Menu bar app with no Dock icon and a Liquid Glass panel that opens under the status item and closes on an outside click or Escape.
@@ -23,3 +25,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Compact menu bar layout, values at a fixed width so the menu bar never shifts, and a menu bar refresh interval per module (5 seconds by default).
 - Release workflow that builds a Developer ID signed, notarized DMG and publishes it on GitHub.
 - English and Portuguese (Brazil) throughout, with locale-aware numbers, sizes, rates, temperatures, durations and times.
+
+[Unreleased]: https://github.com/oeduardoal/pulso/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/oeduardoal/pulso/releases/tag/v0.1.0

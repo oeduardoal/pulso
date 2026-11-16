@@ -21,7 +21,8 @@ concurrency:
 jobs:
   release:
     runs-on: macos-26
-    timeout-minutes: 45
+    # Apple sometimes takes over an hour to notarize, especially for a new certificate.
+    timeout-minutes: 240
     env:
       TAG: ${{ inputs.tag || github.ref_name }}
     steps:
