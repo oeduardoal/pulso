@@ -1,4 +1,5 @@
 import AppKit
+import ServiceManagement
 import SwiftUI
 
 @main
@@ -21,6 +22,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         Pref.register()
+        #if !DEBUG
+        // Launch at login is on from the first run; Settings, General turns it off and it stays off.
+        if !UserDefaults.standard.bool(forKey: Pref.launchAtLoginSet) {
+            UserDefaults.standard.set(true, forKey: Pref.launchAtLoginSet)
+            try? SMAppService.mainApp.register()
+        }
+        #endif
         Monitor.shared.start()
         Monitor.shared.alerts.requestAuthorization()
 

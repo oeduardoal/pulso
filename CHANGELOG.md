@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- Pulso opens at login by default, set on its first launch. Turn it off in Settings, General.
 - The compact menu bar layout fits network rates to their text, so idle rates no longer leave a gap.
 
 ## [0.1.1] - 2026-11-15

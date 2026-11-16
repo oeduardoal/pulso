@@ -17,6 +17,7 @@ enum Pref {
     static let latencyHost = "network.latencyHost"
     static let bluetooth = "bluetooth.enabled"
     static let widgetsEnabled = "widgets.enabled"
+    static let launchAtLoginSet = "launchAtLogin.set"
 
     static let alertCPU = "alerts.cpu"
     static let alertCPUThreshold = "alerts.cpu.threshold"
