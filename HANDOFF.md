@@ -13,6 +13,7 @@ Pulso is a menu bar system monitor for macOS. It shows CPU, memory, disk, networ
 | `design/screenshots/` | PNG render of every screen in both languages, at 2x. |
 | `design/tokens.json` | Shared colors, type, radii, spacing and sizes. |
 | `localization/Localizable.xcstrings` | String Catalog with 133 keys in English and Portuguese (Brazil). |
+| `brand/` | Brand kit: app icon, logo, menu bar glyph, palette and icon set. `brand/ROLLOUT.md` is the brief for applying it. |
 | `CLAUDE.md` | Working instructions for Claude Code. |
 
 The HTML files are a visual reference, not something to embed. Read exact values (padding, radius, font size, color) from the inline styles. All numbers shown in the mockups are sample data for an imaginary MacBook Pro with an M3 Pro chip.

@@ -2,7 +2,7 @@
 
 Identity assets for Pulso: app icon, logo, menu bar glyph, colors, type, icon set, wallpaper and a GitHub social preview. Open [`index.html`](index.html) for the visual overview, or see [`brand-sheet.png`](brand-sheet.png).
 
-**Status:** nothing here is wired into the app yet. The app has no asset catalog and no app icon. See [Wiring the app icon](#wiring-the-app-icon).
+**Status:** nothing here is wired into the app yet. The app has no asset catalog and no app icon. [`ROLLOUT.md`](ROLLOUT.md) is the task brief for applying the kit; see also [Wiring the app icon](#wiring-the-app-icon).
 
 ## Concept
 

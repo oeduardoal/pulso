@@ -9,6 +9,12 @@ Menu bar system monitor for macOS. Read `HANDOFF.md` before writing any code: it
 - `design/screenshots/` shows the intended result. All numbers in the mockups are sample data.
 - The HTML is a visual reference only. Build the app natively; do not embed a web view.
 
+## Brand
+
+- `brand/README.md` describes the identity: app icon, logo, menu bar glyph, palette, type and icon set.
+- `brand/ROLLOUT.md` is the task brief for applying the kit to the app and the repository. Follow its task order and ask before deciding anything under its "Open decisions".
+- The SVG files are the masters. Never edit a derived PNG by hand; re-export it from its SVG.
+
 ## Conventions
 
 - Swift and SwiftUI, with AppKit only where SwiftUI cannot do the job (status item, panel window behavior, vibrancy).
@@ -25,4 +31,5 @@ Menu bar system monitor for macOS. Read `HANDOFF.md` before writing any code: it
 - Build and run after each milestone listed in `HANDOFF.md`, and compare against the matching screenshot.
 - This is an open source project. Keep `README.md` (roadmap) and `CHANGELOG.md` (`Unreleased`) current with each user-visible change, and follow `CONTRIBUTING.md`.
 - Code, comments, commit messages and docs are in English.
+- English is the default everywhere: source strings, design files, brand assets and docs. Portuguese (Brazil) is the second localization, never the default.
 - Ask before deciding any item under "Open decisions" in `HANDOFF.md`.
