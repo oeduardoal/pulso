@@ -54,9 +54,8 @@ private struct MenuBarWidget: View {
                     Text(L("menubar.\(module.rawValue)"))
                         .font(.system(size: 8.5, weight: .semibold))
                         .foregroundStyle(tint == .primary ? Color.secondary : tint)
-                    Text(reading.text)
+                    StableText(text: reading.text, widest: reading.widest, alignment: .leading)
                         .font(.system(size: 12, weight: .semibold).monospacedDigit())
-                        .frame(minWidth: 30, alignment: .leading)
                 }
             case .line:
                 Sparkline(values: Array(reading.history.suffix(20)), color: tint)
@@ -71,8 +70,11 @@ private struct MenuBarWidget: View {
                     .frame(width: 13, height: 13)
                 valueText(reading.text)
             case .speed:
-                MenuBarRate(symbol: "arrow.down", rate: monitor.network.download)
-                MenuBarRate(symbol: "arrow.up", rate: monitor.network.upload)
+                VStack(alignment: .leading, spacing: -2) {
+                    MenuBarRate(symbol: "arrow.down", rate: monitor.network.download)
+                    MenuBarRate(symbol: "arrow.up", rate: monitor.network.upload)
+                }
+                .font(.system(size: 9.5, weight: .semibold).monospacedDigit())
             case .battery:
                 BatteryGlyph(level: reading.fraction, color: tint, width: 22, height: 11)
                 valueText(reading.text)
@@ -86,8 +88,7 @@ private struct MenuBarWidget: View {
     }
 
     private func valueText(_ text: String) -> some View {
-        // A minimum width keeps the menu bar from shifting as digits come and go.
-        Text(text).frame(minWidth: module == .sensors ? 26 : 34, alignment: .trailing)
+        StableText(text: text, widest: MenuBarReading.widest(for: module), alignment: .trailing)
     }
 }
 
@@ -96,10 +97,22 @@ private struct MenuBarRate: View {
     let rate: Double
 
     var body: some View {
-        HStack(spacing: 3) {
-            Image(systemName: symbol).font(.system(size: 9, weight: .bold))
-            Text(Format.rate(rate)).frame(minWidth: 62, alignment: .trailing)
+        HStack(spacing: 2) {
+            Image(systemName: symbol).font(.system(size: 7.5, weight: .bold))
+            StableText(text: Format.rate(rate), widest: Format.rate(88_800_000), alignment: .leading)
         }
+    }
+}
+
+/// Text that always takes the width of `widest`, so changing values never resize the status item
+/// and push the rest of the menu bar around.
+private struct StableText: View {
+    let text: String
+    let widest: String
+    let alignment: Alignment
+
+    var body: some View {
+        Text(widest).hidden().overlay(alignment: alignment) { Text(text).fixedSize() }
     }
 }
 
@@ -147,6 +160,18 @@ private struct MenuBarReading {
             status = celsius >= 90 ? .coral : celsius >= 75 ? .amber : .green
         }
         if spokenText.isEmpty { spokenText = text }
+        widest = Self.widest(for: module)
+    }
+
+    var widest = ""
+
+    /// The longest text a module can show, formatted in the current locale.
+    static func widest(for module: Module) -> String {
+        switch module {
+        case .network: Format.rate(88_800_000)
+        case .sensors: Format.degrees(188)
+        default: Format.percent(1)
+        }
     }
 }
 
