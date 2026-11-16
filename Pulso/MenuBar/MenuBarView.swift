@@ -16,7 +16,13 @@ struct MenuBarView: View {
         let modules = Pref.menuBarModules(order: order, hidden: hidden).filter { readings[$0] != nil }
         HStack(spacing: compact ? 7 : 12) {
             if modules.isEmpty {
-                Image(systemName: "waveform.path.ecg").font(.system(size: 14, weight: .medium))
+                // The brand glyph is drawn on an 18 pt canvas as a template, so it follows the menu bar tint.
+                Image("MenuBarGlyph")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 18, height: 18)
+                    .foregroundStyle(.primary)
             }
             ForEach(modules) { module in
                 MenuBarWidget(module: module, reading: readings[module] ?? MenuBarReading())
