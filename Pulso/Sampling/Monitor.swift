@@ -30,6 +30,8 @@ final class Monitor {
     private(set) var sensors = SensorReading()
     private(set) var bluetooth: [BluetoothDevice] = []
     private(set) var topProcesses: [ProcessUsage] = []
+    /// What the status item shows, refreshed on each module's own interval.
+    private(set) var menuBar: [Module: MenuBarReading] = [:]
     private(set) var deviceName = ""
     private(set) var uptime: TimeInterval = 0
     let alerts = AlertEngine()
@@ -65,10 +67,25 @@ final class Monitor {
         self.timer = timer
     }
 
+    /// Modules sample every second so charts cover exactly the last 60 seconds and alerts react
+    /// quickly. The interval setting only paces the menu bar, which is the costly part to redraw.
     private func due(_ module: Module) -> Bool {
-        guard Pref.isEnabled(module) else { return false }
-        let interval = max(1, UserDefaults.standard.integer(forKey: Pref.interval(module)))
-        return tick % interval == 0
+        Pref.isEnabled(module)
+    }
+
+    private func updateMenuBar() {
+        var next = menuBar
+        for module in Module.allCases {
+            guard Pref.isEnabled(module), module != .battery || battery.isPresent else {
+                next[module] = nil
+                continue
+            }
+            let interval = max(1, UserDefaults.standard.integer(forKey: Pref.interval(module)))
+            if next[module] == nil || tick % interval == 0 {
+                next[module] = MenuBarReading(module: module, monitor: self)
+            }
+        }
+        if next != menuBar { menuBar = next }
     }
 
     private func tickNow() {
@@ -123,6 +140,7 @@ final class Monitor {
             samplePanelExtras()
         }
 
+        updateMenuBar()
         alerts.evaluate(self)
         if tick % 60 == 1, defaults.bool(forKey: Pref.widgetsEnabled) {
             writeWidgetSnapshot()

@@ -58,7 +58,7 @@ enum Pref {
             defaults[enabled(module)] = true
             defaults[style(module)] = module.styles[0].rawValue
             defaults[color(module)] = Accent.monochrome.rawValue
-            defaults[interval(module)] = 1
+            defaults[interval(module)] = 5
             defaults[processes(module)] = 5
         }
         UserDefaults.standard.register(defaults: defaults)

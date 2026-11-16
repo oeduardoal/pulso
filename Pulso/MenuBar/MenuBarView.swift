@@ -10,19 +10,21 @@ struct MenuBarView: View {
     let onWidthChange: (CGFloat) -> Void
 
     var body: some View {
-        let modules = Pref.menuBarModules(order: order, hidden: hidden).filter(Pref.isEnabled)
-            .filter { $0 != .battery || monitor.battery.isPresent }
+        // Reads only the menu bar snapshot, which the monitor refreshes on each module's interval,
+        // so the status item redraws every few seconds instead of on every sample.
+        let readings = monitor.menuBar
+        let modules = Pref.menuBarModules(order: order, hidden: hidden).filter { readings[$0] != nil }
         HStack(spacing: compact ? 7 : 12) {
             if modules.isEmpty {
                 Image(systemName: "waveform.path.ecg").font(.system(size: 14, weight: .medium))
             }
             ForEach(modules) { module in
-                MenuBarWidget(module: module)
+                MenuBarWidget(module: module, reading: readings[module] ?? MenuBarReading())
             }
         }
         .font(.system(size: 13, weight: .medium).monospacedDigit())
         .padding(.horizontal, compact ? 3 : 6)
-        // One flattened layer instead of one per shape keeps each second's update cheap.
+        // One flattened layer instead of one per shape keeps each update cheap.
         .drawingGroup()
         .frame(maxHeight: .infinity)
         .fixedSize(horizontal: true, vertical: false)
@@ -33,20 +35,27 @@ struct MenuBarView: View {
 
 private struct MenuBarWidget: View {
     let module: Module
-    @Environment(Monitor.self) private var monitor
+    let reading: MenuBarReading
+    @AppStorage private var storedStyle: String
+    @AppStorage private var storedColor: String
+
+    init(module: Module, reading: MenuBarReading) {
+        self.module = module
+        self.reading = reading
+        _storedStyle = AppStorage(wrappedValue: module.styles[0].rawValue, Pref.style(module))
+        _storedColor = AppStorage(wrappedValue: Accent.monochrome.rawValue, Pref.color(module))
+    }
 
     private var style: MenuBarStyle {
-        let stored = UserDefaults.standard.string(forKey: Pref.style(module)).flatMap(MenuBarStyle.init(rawValue:))
-        return stored.flatMap { module.styles.contains($0) ? $0 : nil } ?? module.styles[0]
+        MenuBarStyle(rawValue: storedStyle).flatMap { module.styles.contains($0) ? $0 : nil } ?? module.styles[0]
     }
 
     private var tint: Color {
-        let accent = UserDefaults.standard.string(forKey: Pref.color(module)).flatMap(Accent.init(rawValue:)) ?? .monochrome
+        let accent = Accent(rawValue: storedColor) ?? .monochrome
         return accent == .monochrome ? .primary : accent.base
     }
 
     var body: some View {
-        let reading = MenuBarReading(module: module, monitor: monitor)
         HStack(spacing: 4) {
             switch style {
             case .mini:
@@ -72,8 +81,8 @@ private struct MenuBarWidget: View {
                 valueText(reading.text)
             case .speed:
                 VStack(alignment: .leading, spacing: -2) {
-                    MenuBarRate(symbol: "arrow.down", rate: monitor.network.download)
-                    MenuBarRate(symbol: "arrow.up", rate: monitor.network.upload)
+                    MenuBarRate(symbol: "arrow.down", rate: reading.download)
+                    MenuBarRate(symbol: "arrow.up", rate: reading.upload)
                 }
                 .font(.system(size: 9.5, weight: .semibold).monospacedDigit())
             case .battery:
@@ -118,12 +127,17 @@ private struct StableText: View {
 }
 
 /// What a module shows in the menu bar, independent of the style.
-private struct MenuBarReading {
+struct MenuBarReading: Equatable {
     var fraction = 0.0
     var text = ""
     var spokenText = ""
     var history: [Double] = []
     var status = Accent.green
+    var download = 0.0
+    var upload = 0.0
+    var widest = ""
+
+    init() {}
 
     @MainActor
     init(module: Module, monitor: Monitor) {
@@ -148,6 +162,8 @@ private struct MenuBarReading {
             history = monitor.download.values.map { $0 / top }
             fraction = monitor.download.last / top
             text = Format.rate(monitor.network.download)
+            download = monitor.network.download
+            upload = monitor.network.upload
             spokenText = "\(L("network.download")) \(Format.rate(monitor.network.download)), \(L("network.upload")) \(Format.rate(monitor.network.upload))"
         case .battery:
             fraction = monitor.battery.level
@@ -163,8 +179,6 @@ private struct MenuBarReading {
         if spokenText.isEmpty { spokenText = text }
         widest = Self.widest(for: module)
     }
-
-    var widest = ""
 
     /// The longest text a module can show, formatted in the current locale.
     static func widest(for module: Module) -> String {

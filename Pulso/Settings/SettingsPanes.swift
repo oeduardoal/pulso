@@ -237,7 +237,7 @@ private struct ModulePaneContent: View {
         _enabled = AppStorage(wrappedValue: true, Pref.enabled(module))
         _style = AppStorage(wrappedValue: module.styles[0].rawValue, Pref.style(module))
         _color = AppStorage(wrappedValue: Accent.monochrome.rawValue, Pref.color(module))
-        _interval = AppStorage(wrappedValue: 1, Pref.interval(module))
+        _interval = AppStorage(wrappedValue: 5, Pref.interval(module))
         _processes = AppStorage(wrappedValue: 5, Pref.processes(module))
     }
 
