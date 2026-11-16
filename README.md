@@ -27,7 +27,7 @@ Pulso is distributed outside the Mac App Store, signed with Developer ID and not
 
 ## Install
 
-There are no releases yet. Once 0.1.0 ships, download the latest notarized build from the Releases page of this repository.
+Download `Pulso-x.y.z.dmg` from the latest release on the Releases page of this repository, open it and drag Pulso to Applications. Releases are signed with Developer ID and notarized by Apple; each one lists the DMG's SHA-256.
 
 ## Build from source
 

@@ -20,4 +20,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Settings window: language override with relaunch, launch at login, menu bar order, alert thresholds, widget updates and a pane per module.
 - Notifications for sustained high CPU, critical memory pressure, low disk space, low battery and high temperature.
 - Desktop widgets for CPU and memory (small) and network (medium), showing when their data was taken.
+- Compact menu bar layout, values at a fixed width so the menu bar never shifts, and a menu bar refresh interval per module (5 seconds by default).
+- Release workflow that builds a Developer ID signed, notarized DMG and publishes it on GitHub.
 - English and Portuguese (Brazil) throughout, with locale-aware numbers, sizes, rates, temperatures, durations and times.
