@@ -75,9 +75,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    // An agent app has no Dock icon or main menu, so Settings and Quit live on the right-click menu.
+    // An agent app has no Dock icon or main menu, so About, Settings and Quit live on the right-click menu.
     private func showContextMenu(from button: NSStatusBarButton) {
         let menu = NSMenu()
+        let about = NSMenuItem(title: L("action.about"), action: #selector(showAbout), keyEquivalent: "")
+        about.target = self
+        menu.addItem(about)
         let settings = NSMenuItem(title: L("action.settings"), action: #selector(openSettingsFromMenu), keyEquivalent: ",")
         settings.target = self
         menu.addItem(settings)
@@ -87,6 +90,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc private func openSettingsFromMenu() { openSettings(nil) }
+
+    /// The standard About panel: icon, name, version and copyright from the bundle, plus a link to the repository.
+    @objc private func showAbout() {
+        let credits = NSAttributedString(
+            string: L("about.repository"),
+            attributes: [
+                .link: URL(string: "https://github.com/oeduardoal/pulso")!,
+                .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+            ]
+        )
+        NSApp.activate()
+        NSApp.orderFrontStandardAboutPanel(options: [.credits: credits])
+    }
 
     private func openSettings(_ module: Module?) {
         panel.close()

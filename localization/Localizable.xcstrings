@@ -1,6 +1,42 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "about.repository": {
+      "comment": "Link in the About panel",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open source on GitHub"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Código aberto no GitHub"
+          }
+        }
+      }
+    },
+    "action.about": {
+      "comment": "Status item right-click menu",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About Pulso"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobre o Pulso"
+          }
+        }
+      }
+    },
     "action.activityMonitor": {
       "comment": "Short button label in the overview",
       "extractionState": "manual",
@@ -373,7 +409,7 @@
       "comment": "Notification title"
     },
     "app.name": {
-      "comment": "App name (working title)",
+      "comment": "App name",
       "extractionState": "manual",
       "localizations": {
         "en": {
